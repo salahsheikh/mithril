@@ -2,9 +2,9 @@
 // Created by ssheikh on 2021-03-04.
 //
 
-#include <rune/channel/socket_channel.h>
+#include <mithril/channel/socket_channel.hh>
 
-void socket_channel::write(rune::message msg)
+void socket_channel::write(mithril::message msg)
 {
   if (!msg->holds<byte_buffer>()) {
     RUNE_LOG(warning) << "Unhandled write...";

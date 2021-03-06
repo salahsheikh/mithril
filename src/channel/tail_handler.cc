@@ -15,9 +15,9 @@
 │ PERFORMANCE OF THIS SOFTWARE.                                                │
 └─────────────────────────────────────────────────────────────────────────────*/
 
-#include <rune/channel/tail_handler.hh>
+#include <mithril/channel/tail_handler.hh>
 
-void tail_handler::channel_read(channel_handler_context&, rune::message)
+void tail_handler::channel_read(channel_handler_context&, mithril::message)
 {
   RUNE_LOG(warning) << "Unhandled read...";
 }

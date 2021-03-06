@@ -15,10 +15,10 @@
 │ PERFORMANCE OF THIS SOFTWARE.                                                │
 └─────────────────────────────────────────────────────────────────────────────*/
 
-#include <rune/channel/channel.hh>
+#include <mithril/channel/channel.hh>
 
-#include <rune/channel/head_handler.hh>
-#include <rune/channel/tail_handler.hh>
+#include <mithril/channel/head_handler.hh>
+#include <mithril/channel/tail_handler.hh>
 
 void channel::attach_pipeline(std::shared_ptr<channel_pipeline> pipeline)
 {

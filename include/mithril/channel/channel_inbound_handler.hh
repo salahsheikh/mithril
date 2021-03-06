@@ -5,8 +5,8 @@
 #ifndef RUNE_INCLUDE_CHANNEL_INBOUND_HANDLER_HH
 #define RUNE_INCLUDE_CHANNEL_INBOUND_HANDLER_HH
 
-#include <rune/channel/channel_handler.hh>
-#include <rune/message.hh>
+#include <mithril/channel/channel_handler.hh>
+#include <mithril/message.hh>
 
 class channel_inbound_handler
     : public virtual channel_handler
@@ -16,7 +16,7 @@ public:
 
   virtual void channel_inactive(channel_handler_context&) = 0;
 
-  virtual void channel_read(channel_handler_context&, rune::message) = 0;
+  virtual void channel_read(channel_handler_context&, mithril::message) = 0;
 
   channel_direction direction() override
   {
@@ -32,7 +32,7 @@ public:
 
   void channel_inactive(channel_handler_context& ctx) override;
 
-  void channel_read(channel_handler_context&, rune::message) override;
+  void channel_read(channel_handler_context&, mithril::message) override;
 };
 
 #endif //RUNE_INCLUDE_CHANNEL_INBOUND_HANDLER_HH

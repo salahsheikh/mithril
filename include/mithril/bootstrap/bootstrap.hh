@@ -10,12 +10,12 @@
 
 class channel_handler;
 
-namespace rune {
+namespace mithril {
 class server_event_loop_service;
 }
 class client_event_loop_service;
 
-namespace rune {
+namespace mithril {
 class bootstrap
 {
 private:

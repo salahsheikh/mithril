@@ -2,10 +2,10 @@
 // Created by ssheikh on 2021-03-05.
 //
 
-#include <rune/handler/byte_to_message_decoder.hh>
-#include <rune/channel/channel_handler_context.hh>
+#include <mithril/handler/byte_to_message_decoder.hh>
+#include <mithril/channel/channel_handler_context.hh>
 
-void byte_to_message_decoder::channel_read(channel_handler_context& ctx, rune::message msg)
+void byte_to_message_decoder::channel_read(channel_handler_context& ctx, mithril::message msg)
 {
   if (msg->holds<byte_buffer>()) {
     ax.expand(std::move(msg->unwrap<byte_buffer>()));

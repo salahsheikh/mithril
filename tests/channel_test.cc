@@ -2,7 +2,7 @@
 // Created by ssheikh on 2021-02-20.
 //
 
-#include "test_channel.h"
+#include "test_channel.hh"
 
 #include <gtest/gtest.h>
 

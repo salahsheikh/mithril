@@ -5,9 +5,9 @@
 #ifndef RUNE_INCLUDE_RUNE_HANDLER_MESSAGE_TO_MESSAGE_DECODER_HH
 #define RUNE_INCLUDE_RUNE_HANDLER_MESSAGE_TO_MESSAGE_DECODER_HH
 
-#include <rune/channel/channel_inbound_handler.hh>
-#include <rune/message.hh>
-#include <rune/buffer/composite_buffer.hh>
+#include <mithril/channel/channel_inbound_handler.hh>
+#include <mithril/message.hh>
+#include <mithril/buffer/composite_buffer.hh>
 
 #include <list>
 
@@ -16,13 +16,13 @@ class message_to_message_decoder
     : public channel_inbound_handler_adapter
 {
 private:
-  std::list<rune::message> out;
+  std::list<mithril::message> out;
 
 public:
 
-  virtual void decode(channel_handler_context&, Input msg, std::list<rune::message>& out) = 0;
+  virtual void decode(channel_handler_context&, Input msg, std::list<mithril::message>& out) = 0;
 
-  void channel_read(channel_handler_context& ctx, rune::message msg) override
+  void channel_read(channel_handler_context& ctx, mithril::message msg) override
   {
     if (msg->template holds<Input>()) {
       decode(ctx, msg->unwrap<Input>(), out);

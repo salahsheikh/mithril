@@ -2,12 +2,12 @@
 // Created by ssheikh on 2021-03-01.
 //
 
-#include <rune/message.hh>
+#include <mithril/message.hh>
 
 #include <gtest/gtest.h>
 
-using rune::message;
-using rune::create_message;
+using mithril::message;
+using mithril::create_message;
 
 TEST(MessageTest, NoThrowHoldArbitraryTypes)
 {
@@ -41,14 +41,14 @@ TEST(MessageTest, ExpectBadCastException)
 {
   message msg1 = create_message(42ul);
   ASSERT_TRUE(msg1->holds<unsigned long>());
-  EXPECT_THROW((void)msg1->unwrap<char>(), rune::bad_message_cast_exception);
+  EXPECT_THROW((void)msg1->unwrap<char>(), mithril::bad_message_cast_exception);
 }
 
 TEST(MessageTest, ExpectDoubleUnwrapException)
 {
   message msg1 = create_message(42u);
   (void)msg1->unwrap<unsigned>();
-  EXPECT_THROW((void)msg1->unwrap<unsigned>(), rune::double_message_unwrap_exception);
+  EXPECT_THROW((void)msg1->unwrap<unsigned>(), mithril::double_message_unwrap_exception);
 }
 
 TEST(MessageTest, LValue)

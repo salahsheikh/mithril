@@ -5,14 +5,14 @@
 #ifndef RUNE_INCLUDE_CHANNEL_HANDLER_CONTEXT_HH
 #define RUNE_INCLUDE_CHANNEL_HANDLER_CONTEXT_HH
 
-#include "rune/channel/channel_handler.hh"
-#include "rune/channel/channel_inbound_invoker.hh"
-#include "rune/channel/channel_inbound_handler.hh"
+#include "mithril/channel/channel_handler.hh"
+#include "mithril/channel/channel_inbound_invoker.hh"
+#include "mithril/channel/channel_inbound_handler.hh"
 
-#include "rune/channel/channel_outbound_invoker.hh"
-#include "rune/channel/channel_outbound_handler.hh"
-#include "rune/common.hh"
-#include <rune/message.hh>
+#include "mithril/channel/channel_outbound_invoker.hh"
+#include "mithril/channel/channel_outbound_handler.hh"
+#include "mithril/common.hh"
+#include <mithril/message.hh>
 
 #include <seastar/core/future.hh>
 
@@ -64,9 +64,9 @@ public:
 
   virtual void invoke_channel_inactive() = 0;
 
-  virtual void invoke_channel_read(rune::message msg) = 0;
+  virtual void invoke_channel_read(mithril::message msg) = 0;
 
-  virtual void invoke_write(rune::message msg) = 0;
+  virtual void invoke_write(mithril::message msg) = 0;
 
   virtual channel_direction direction() = 0;
 
@@ -74,12 +74,12 @@ public:
 
   virtual channel_handler_context& read() = 0;
 
-  virtual void write(rune::message msg) = 0;
+  virtual void write(mithril::message msg) = 0;
 
   template<typename ValueType>
   void write(ValueType&& v)
   {
-    write(rune::create_message(std::forward<ValueType>(v)));
+    write(mithril::create_message(std::forward<ValueType>(v)));
   }
 
   channel_pipeline& pipeline()
@@ -111,7 +111,7 @@ public:
     find_context_inbound()->invoke_channel_inactive();
   }
 
-  void fire_channel_read(rune::message msg) override
+  void fire_channel_read(mithril::message msg) override
   {
     find_context_inbound()->invoke_channel_read(std::move(msg));
   }
@@ -136,7 +136,7 @@ public:
     as_inbound(m_handler)->channel_inactive(*this);
   }
 
-  void invoke_channel_read(rune::message msg) override
+  void invoke_channel_read(mithril::message msg) override
   {
     as_inbound(m_handler)->channel_read(*this, std::move(msg));
   }
@@ -146,12 +146,12 @@ public:
     return *this;
   }
 
-  void invoke_write(rune::message msg) override
+  void invoke_write(mithril::message msg) override
   {
     as_outbound(m_handler)->write(*this, std::move(msg));
   }
 
-  void write(rune::message msg) override
+  void write(mithril::message msg) override
   {
     find_context_outbound()->invoke_write(std::move(msg));
   }

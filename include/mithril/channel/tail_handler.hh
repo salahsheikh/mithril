@@ -5,11 +5,11 @@
 #ifndef RUNE_INCLUDE_TAIL_HANDLER_HH
 #define RUNE_INCLUDE_TAIL_HANDLER_HH
 
-#include <rune/channel/channel_handler.hh>
-#include <rune/channel/channel_inbound_handler.hh>
-#include <rune/channel/channel_outbound_handler.hh>
-#include <rune/channel/channel_handler_context.hh>
-#include <rune/message.hh>
+#include <mithril/channel/channel_handler.hh>
+#include <mithril/channel/channel_inbound_handler.hh>
+#include <mithril/channel/channel_outbound_handler.hh>
+#include <mithril/channel/channel_handler_context.hh>
+#include <mithril/message.hh>
 
 #include <memory>
 
@@ -23,7 +23,7 @@ public:
 
   void channel_inactive(channel_handler_context& ctx) final;
 
-  void channel_read(channel_handler_context&, rune::message) final;
+  void channel_read(channel_handler_context&, mithril::message) final;
 };
 
 #endif //RUNE_INCLUDE_TAIL_HANDLER_HH

@@ -5,21 +5,21 @@
 #ifndef RUNE_TESTS_TEST_CHANNEL_H
 #define RUNE_TESTS_TEST_CHANNEL_H
 
-#include <rune/channel/channel.hh>
+#include <mithril/channel/channel.hh>
 
 class test_channel
     : public channel
 {
 public:
 
-  std::list<rune::message> tx;
+  std::list<mithril::message> tx;
 
   test_channel& read() override
   {
     return *this;
   }
 
-  void write(rune::message msg) override
+  void write(mithril::message msg) override
   {
     tx.push_back(std::move(msg));
   }

@@ -5,10 +5,10 @@
 #ifndef RUNE_INCLUDE_RUNE_HANDLER_BYTE_TO_MESSAGE_DECODER_HH
 #define RUNE_INCLUDE_RUNE_HANDLER_BYTE_TO_MESSAGE_DECODER_HH
 
-#include <rune/channel/channel_inbound_handler.hh>
-#include <rune/message.hh>
-#include <rune/buffer/byte_buffer.hh>
-#include <rune/buffer/composite_buffer.hh>
+#include <mithril/channel/channel_inbound_handler.hh>
+#include <mithril/message.hh>
+#include <mithril/buffer/byte_buffer.hh>
+#include <mithril/buffer/composite_buffer.hh>
 
 #include <list>
 
@@ -30,15 +30,15 @@ private:
     friend byte_to_message_decoder;
   };
 
-  std::list<rune::message> decoded_messages;
+  std::list<mithril::message> decoded_messages;
 
   buffer_compositor ax;
 
 public:
 
-  virtual void decode(channel_handler_context&, composite_buffer& msg, std::list<rune::message>& out) = 0;
+  virtual void decode(channel_handler_context&, composite_buffer& msg, std::list<mithril::message>& out) = 0;
 
-  void channel_read(channel_handler_context& ctx, rune::message msg) override;
+  void channel_read(channel_handler_context& ctx, mithril::message msg) override;
 };
 
 #endif //RUNE_INCLUDE_RUNE_HANDLER_BYTE_TO_MESSAGE_DECODER_HH

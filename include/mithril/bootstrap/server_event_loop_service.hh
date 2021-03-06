@@ -5,10 +5,10 @@
 #ifndef RUNE_INCLUDE_SERVER_EVENT_LOOP_SERVICE_HH
 #define RUNE_INCLUDE_SERVER_EVENT_LOOP_SERVICE_HH
 
-#include <rune/channel/socket_channel.h>
-#include <rune/channel/channel_pipeline.hh>
-#include <rune/channel/channel_initializer.hh>
-#include <rune/bootstrap/bootstrap.hh>
+#include <mithril/channel/socket_channel.hh>
+#include <mithril/channel/channel_pipeline.hh>
+#include <mithril/channel/channel_initializer.hh>
+#include <mithril/bootstrap/bootstrap.hh>
 
 #include <seastar/core/seastar.hh>
 #include <seastar/core/reactor.hh>
@@ -20,7 +20,7 @@
 
 #include <utility>
 
-namespace rune {
+namespace mithril {
 class server_event_loop_service
 {
 private:

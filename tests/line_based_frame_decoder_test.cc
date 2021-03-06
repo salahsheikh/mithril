@@ -2,13 +2,13 @@
 // Created by ssheikh on 2021-03-04.
 //
 
-#include "test_channel.h"
+#include "test_channel.hh"
 
-#include <rune/channel/channel_pipeline.hh>
-#include <rune/channel/channel_initializer.hh>
-#include <rune/handler/line_based_frame_decoder.hh>
-#include <rune/message.hh>
-#include <rune/buffer/byte_buffer.hh>
+#include <mithril/channel/channel_pipeline.hh>
+#include <mithril/channel/channel_initializer.hh>
+#include <mithril/handler/line_based_frame_decoder.hh>
+#include <mithril/message.hh>
+#include <mithril/buffer/byte_buffer.hh>
 
 #include <gtest/gtest.h>
 
@@ -16,7 +16,7 @@ class read_then_write_handler
     : public channel_inbound_handler_adapter
 {
 public:
-  void channel_read(channel_handler_context& ctx, rune::message msg) override
+  void channel_read(channel_handler_context& ctx, mithril::message msg) override
   {
     ctx.write(std::move(msg));
   }
@@ -52,7 +52,7 @@ TEST(LineBasedFrameDecoderTest, SimpleDecode)
   auto test_string_buf = byte_buffer::copy_of("one\ntwo\nthree\n");
   ASSERT_TRUE(channel->tx.empty());
 
-  channel->pipeline()->fire_channel_read(rune::create_message(std::move(test_string_buf)));
+  channel->pipeline()->fire_channel_read(mithril::create_message(std::move(test_string_buf)));
 
   ASSERT_EQ(channel->tx.size(), 3);
 }
@@ -68,7 +68,7 @@ TEST(LineBasedFrameDecoderTest, DecodeTooLong)
   auto test_string_buf = byte_buffer::copy_of("aaa\nbbbb\naaa\n");
   ASSERT_TRUE(channel->tx.empty());
 
-  channel->pipeline()->fire_channel_read(rune::create_message(std::move(test_string_buf)));
+  channel->pipeline()->fire_channel_read(mithril::create_message(std::move(test_string_buf)));
 
   // Discard long lines
   ASSERT_EQ(channel->tx.size(), 2);

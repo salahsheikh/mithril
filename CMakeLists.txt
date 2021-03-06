@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project(rune)
+project(mithril)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -7,7 +7,7 @@ find_package(Seastar REQUIRED)
 find_package(Boost REQUIRED system log log_setup)
 
 file(GLOB_RECURSE SOURCE_FILES ${PROJECT_SOURCE_DIR}/src/*.cc)
-add_library(rune STATIC ${SOURCE_FILES})
+add_library(mithril STATIC ${SOURCE_FILES})
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     add_compile_definitions(DCHECK_IS_ON)
@@ -22,8 +22,8 @@ if (CMAKE_BUILD_TYPE STREQUAL "Debug")
 endif ()
 
 # TODO: Include Boost only on debug builds
-target_include_directories(rune PUBLIC include PRIVATE ${Boost_INCLUDE_DIRS})
-target_link_libraries(rune PUBLIC Seastar::seastar PRIVATE Boost::log)
+target_include_directories(mithril PUBLIC include PRIVATE ${Boost_INCLUDE_DIRS})
+target_link_libraries(mithril PUBLIC Seastar::seastar PRIVATE Boost::log)
 
 add_subdirectory(examples)
 

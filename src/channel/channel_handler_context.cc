@@ -15,7 +15,7 @@
 │ PERFORMANCE OF THIS SOFTWARE.                                                │
 └─────────────────────────────────────────────────────────────────────────────*/
 
-#include <rune/channel/channel_handler_context.hh>
+#include <mithril/channel/channel_handler_context.hh>
 
 channel_handler_context* channel_handler_context::find_context_inbound()
 {

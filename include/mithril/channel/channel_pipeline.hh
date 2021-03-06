@@ -5,13 +5,13 @@
 #ifndef RUNE_INCLUDE_CHANNEL_PIPELINE_HH
 #define RUNE_INCLUDE_CHANNEL_PIPELINE_HH
 
-#include "rune/channel/channel_handler_context.hh"
-#include "rune/channel/channel_handler.hh"
-#include "rune/channel/channel_inbound_handler.hh"
-#include "rune/channel/channel_inbound_invoker.hh"
-#include "rune/channel/channel_outbound_invoker.hh"
-#include "rune/common.hh"
-#include <rune/message.hh>
+#include "mithril/channel/channel_handler_context.hh"
+#include "mithril/channel/channel_handler.hh"
+#include "mithril/channel/channel_inbound_handler.hh"
+#include "mithril/channel/channel_inbound_invoker.hh"
+#include "mithril/channel/channel_outbound_invoker.hh"
+#include "mithril/common.hh"
+#include <mithril/message.hh>
 
 #include <list>
 #include <memory>
@@ -56,14 +56,14 @@ public:
 
   void fire_channel_inactive() override;
 
-  void fire_channel_read(rune::message msg) override;
+  void fire_channel_read(mithril::message msg) override;
 
   channel_pipeline& read() override
   {
     return *this;
   }
 
-  void write(rune::message msg) override
+  void write(mithril::message msg) override
   {
     tail()->write(std::move(msg));
   }

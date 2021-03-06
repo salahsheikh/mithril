@@ -15,8 +15,8 @@
 │ PERFORMANCE OF THIS SOFTWARE.                                                │
 └─────────────────────────────────────────────────────────────────────────────*/
 
-#include <rune/channel/channel_pipeline.hh>
-#include <rune/channel/channel.hh>
+#include <mithril/channel/channel_pipeline.hh>
+#include <mithril/channel/channel.hh>
 
 void channel_pipeline::fire_channel_active()
 {
@@ -28,7 +28,7 @@ void channel_pipeline::fire_channel_inactive()
   head()->invoke_channel_inactive();
 }
 
-void channel_pipeline::fire_channel_read(rune::message msg)
+void channel_pipeline::fire_channel_read(mithril::message msg)
 {
   head()->invoke_channel_read(std::move(msg));
 }

@@ -15,7 +15,7 @@
 │ PERFORMANCE OF THIS SOFTWARE.                                                │
 └─────────────────────────────────────────────────────────────────────────────*/
 
-#include <rune/bootstrap/client_event_loop_service.hh>
+#include <mithril/bootstrap/client_event_loop_service.hh>
 
 using seastar::stop_iteration;
 
@@ -42,7 +42,7 @@ seastar::future<> client_event_loop_service::handle_connection(seastar::connecte
   return seastar::repeat([this] {
     return channel->input.read().then([this](auto buf) {
       if (buf) {
-        channel->pipeline()->fire_channel_read(rune::create_message(std::move(buf)));
+        channel->pipeline()->fire_channel_read(mithril::create_message(std::move(buf)));
         return seastar::make_ready_future<stop_iteration>(stop_iteration::no);
       } else {
         return seastar::make_ready_future<stop_iteration>(stop_iteration::yes);
@@ -93,7 +93,7 @@ seastar::future<> client_event_loop_service::stop()
   return seastar::make_ready_future<>();
 }
 
-client_event_loop_service::client_event_loop_service(rune::bootstrap bs)
+client_event_loop_service::client_event_loop_service(mithril::bootstrap bs)
     : bs(std::move(bs))
 {
 }

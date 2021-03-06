@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-03-03.
 //
 
-#include <rune/buffer/byte_buffer.hh>
-#include <rune/buffer/composite_buffer.hh>
+#include <mithril/buffer/byte_buffer.hh>
+#include <mithril/buffer/composite_buffer.hh>
 
 #include <gtest/gtest.h>
 

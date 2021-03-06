@@ -5,9 +5,9 @@
 #ifndef RUNE_INCLUDE_CHANNEL_HH
 #define RUNE_INCLUDE_CHANNEL_HH
 
-#include <rune/channel/channel_pipeline.hh>
-#include <rune/channel/channel_outbound_invoker.hh>
-#include <rune/message.hh>
+#include <mithril/channel/channel_pipeline.hh>
+#include <mithril/channel/channel_outbound_invoker.hh>
+#include <mithril/message.hh>
 
 #include <seastar/core/future.hh>
 
@@ -20,7 +20,7 @@ public:
 
   channel& read() override = 0;
 
-  void write(rune::message msg) override = 0;
+  void write(mithril::message msg) override = 0;
 
   std::shared_ptr<channel_pipeline> pipeline()
   {

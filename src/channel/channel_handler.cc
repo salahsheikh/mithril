@@ -15,7 +15,7 @@
 │ PERFORMANCE OF THIS SOFTWARE.                                                │
 └─────────────────────────────────────────────────────────────────────────────*/
 
-#include <rune/channel/channel_handler_context.hh>
+#include <mithril/channel/channel_handler_context.hh>
 
 void channel_inbound_handler_adapter::channel_active(channel_handler_context& ctx)
 {
@@ -27,7 +27,7 @@ void channel_inbound_handler_adapter::channel_inactive(channel_handler_context& 
   ctx.fire_channel_inactive();
 }
 
-void channel_inbound_handler_adapter::channel_read(channel_handler_context& ctx, rune::message msg)
+void channel_inbound_handler_adapter::channel_read(channel_handler_context& ctx, mithril::message msg)
 {
   ctx.fire_channel_read(std::move(msg));
 }

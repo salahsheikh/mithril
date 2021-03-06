@@ -5,8 +5,8 @@
 #ifndef RUNE_INCLUDE_CHANNEL_INITIALIZER_HH
 #define RUNE_INCLUDE_CHANNEL_INITIALIZER_HH
 
-#include <rune/channel/channel_handler.hh>
-#include <rune/channel/channel_inbound_handler.hh>
+#include <mithril/channel/channel_handler.hh>
+#include <mithril/channel/channel_inbound_handler.hh>
 
 class channel_initializer
     : public channel_inbound_handler_adapter

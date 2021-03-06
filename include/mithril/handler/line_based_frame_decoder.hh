@@ -5,9 +5,9 @@
 #ifndef RUNE_INCLUDE_RUNE_HANDLER_LINE_BASED_FRAME_DECODER_HH
 #define RUNE_INCLUDE_RUNE_HANDLER_LINE_BASED_FRAME_DECODER_HH
 
-#include <rune/channel/channel_inbound_handler.hh>
-#include <rune/handler/byte_to_message_decoder.hh>
-#include <rune/message.hh>
+#include <mithril/channel/channel_inbound_handler.hh>
+#include <mithril/handler/byte_to_message_decoder.hh>
+#include <mithril/message.hh>
 
 class line_based_frame_decoder
     : public byte_to_message_decoder
@@ -20,7 +20,7 @@ public:
   {
   }
 
-  void decode(channel_handler_context&, composite_buffer& msg, std::list<rune::message>& out) override;
+  void decode(channel_handler_context&, composite_buffer& msg, std::list<mithril::message>& out) override;
 };
 
 #endif //RUNE_INCLUDE_RUNE_HANDLER_LINE_BASED_FRAME_DECODER_HH

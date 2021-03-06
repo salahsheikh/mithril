@@ -9,7 +9,7 @@
 #include <typeinfo>
 #include <memory>
 
-namespace rune {
+namespace mithril {
 
 class bad_message_cast_exception final
     : public std::exception

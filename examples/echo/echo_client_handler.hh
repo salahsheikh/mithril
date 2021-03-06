@@ -5,12 +5,12 @@
 #ifndef RUNE_EXAMPLES_ECHO_ECHO_CLIENT_HANDLER_HH
 #define RUNE_EXAMPLES_ECHO_ECHO_CLIENT_HANDLER_HH
 
-#include <rune/channel/channel_inbound_handler.hh>
-#include <rune/channel/channel_handler_context.hh>
-#include <rune/handler/byte_to_message_decoder.hh>
-#include <rune/channel/channel_handler_context.hh>
-#include <rune/handler/line_based_frame_decoder.hh>
-#include <rune/handler/string_decoder.hh>
+#include <mithril/channel/channel_inbound_handler.hh>
+#include <mithril/channel/channel_handler_context.hh>
+#include <mithril/handler/byte_to_message_decoder.hh>
+#include <mithril/channel/channel_handler_context.hh>
+#include <mithril/handler/line_based_frame_decoder.hh>
+#include <mithril/handler/string_decoder.hh>
 
 #include <iostream>
 #include <exception>
@@ -22,7 +22,7 @@ public:
   void channel_active(channel_handler_context& ctx) override
   {
     std::cout << "Accepted connection!" << std::endl;
-    ctx.write(rune::create_message(byte_buffer::copy_of("test test")));
+    ctx.write(mithril::create_message(byte_buffer::copy_of("test test")));
   }
 
   void channel_inactive(channel_handler_context&) override
@@ -30,7 +30,7 @@ public:
     std::cout << "Disconnected connection" << std::endl;
   }
 
-  void channel_read(channel_handler_context& ctx, rune::message msg) override
+  void channel_read(channel_handler_context& ctx, mithril::message msg) override
   {
     if (msg->holds<byte_buffer>()) {
       auto buf = msg->unwrap<byte_buffer>();

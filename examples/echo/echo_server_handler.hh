@@ -5,9 +5,9 @@
 #ifndef RUNE_EXAMPLES_ECHO_ECHO_SERVER_HANDLER_HH
 #define RUNE_EXAMPLES_ECHO_ECHO_SERVER_HANDLER_HH
 
-#include <rune/common.hh>
-#include <rune/channel/channel_handler_context.hh>
-#include <rune/buffer/byte_buffer.hh>
+#include <mithril/common.hh>
+#include <mithril/channel/channel_handler_context.hh>
+#include <mithril/buffer/byte_buffer.hh>
 
 #include <iostream>
 #include <exception>
@@ -26,7 +26,7 @@ public:
     std::cout << "Disconnected connection!" << std::endl;
   }
 
-  void channel_read(channel_handler_context& ctx, rune::message msg) override
+  void channel_read(channel_handler_context& ctx, mithril::message msg) override
   {
     if (msg->holds<byte_buffer>()) {
       auto buf = msg->unwrap<byte_buffer>();

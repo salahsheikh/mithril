@@ -1,6 +1,6 @@
-#include <rune/bootstrap/bootstrap.hh>
-#include <rune/channel/channel_initializer.hh>
-#include <rune/channel/channel_pipeline.hh>
+#include <mithril/bootstrap/bootstrap.hh>
+#include <mithril/channel/channel_initializer.hh>
+#include <mithril/channel/channel_pipeline.hh>
 
 #include <iostream>
 #include <exception>
@@ -22,7 +22,7 @@ public:
 
 int main(int argc, char** argv)
 {
-  using namespace rune;
+  using namespace mithril;
 
   try {
     bootstrap bs;

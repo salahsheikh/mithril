@@ -15,14 +15,14 @@
 │ PERFORMANCE OF THIS SOFTWARE.                                                │
 └─────────────────────────────────────────────────────────────────────────────*/
 
-#include <rune/bootstrap/bootstrap.hh>
-#include <rune/bootstrap/client_event_loop_service.hh>
+#include <mithril/bootstrap/bootstrap.hh>
+#include <mithril/bootstrap/client_event_loop_service.hh>
 
 #include <seastar/core/distributed.hh>
 #include <seastar/core/app-template.hh>
 #include <seastar/core/reactor.hh>
 
-namespace rune {
+namespace mithril {
 
 void bootstrap::start_client(int argc, char** argv)
 {

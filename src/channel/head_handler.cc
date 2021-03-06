@@ -15,10 +15,10 @@
 │ PERFORMANCE OF THIS SOFTWARE.                                                │
 └─────────────────────────────────────────────────────────────────────────────*/
 
-#include <rune/channel/channel.hh>
-#include <rune/channel/head_handler.hh>
+#include <mithril/channel/channel.hh>
+#include <mithril/channel/head_handler.hh>
 
-void head_handler::write(channel_handler_context&, rune::message msg)
+void head_handler::write(channel_handler_context&, mithril::message msg)
 {
   // terminal write, execute write against raw socket
   if (auto channel = m_channel.lock()) {
@@ -36,7 +36,7 @@ void head_handler::channel_inactive(channel_handler_context& ctx)
   ctx.fire_channel_inactive();
 }
 
-void head_handler::channel_read(channel_handler_context& ctx, rune::message msg)
+void head_handler::channel_read(channel_handler_context& ctx, mithril::message msg)
 {
   ctx.fire_channel_read(std::move(msg));
 }

@@ -5,11 +5,11 @@
 #ifndef RUNE_INCLUDE_SERVER_CHANNEL_H
 #define RUNE_INCLUDE_SERVER_CHANNEL_H
 
-#include <rune/common.hh>
-#include <rune/channel/channel.hh>
-#include <rune/bootstrap/server_event_loop_service.hh>
-#include <rune/message.hh>
-#include <rune/buffer/byte_buffer.hh>
+#include <mithril/common.hh>
+#include <mithril/channel/channel.hh>
+#include <mithril/bootstrap/server_event_loop_service.hh>
+#include <mithril/message.hh>
+#include <mithril/buffer/byte_buffer.hh>
 
 #include <seastar/net/api.hh>
 #include <seastar/core/thread.hh>
@@ -47,7 +47,7 @@ public:
 
   seastar::future<> dispatch_all_tx();
 
-  void write(rune::message msg) override;
+  void write(mithril::message msg) override;
 
   seastar::socket_address address() const
   {

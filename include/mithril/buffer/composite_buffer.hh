@@ -5,8 +5,8 @@
 #ifndef RUNE_INCLUDE_RUNE_COMPOSITE_BUFFER_HH
 #define RUNE_INCLUDE_RUNE_COMPOSITE_BUFFER_HH
 
-#include <rune/common.hh>
-#include <rune/buffer/byte_buffer.hh>
+#include <mithril/common.hh>
+#include <mithril/buffer/byte_buffer.hh>
 
 #include <vector>
 #include <utility>

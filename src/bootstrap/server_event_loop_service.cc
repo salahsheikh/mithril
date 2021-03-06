@@ -15,11 +15,11 @@
 │ PERFORMANCE OF THIS SOFTWARE.                                                │
 └─────────────────────────────────────────────────────────────────────────────*/
 
-#include <rune/bootstrap/server_event_loop_service.hh>
+#include <mithril/bootstrap/server_event_loop_service.hh>
 
 using seastar::stop_iteration;
 
-namespace rune {
+namespace mithril {
 seastar::future<> server_event_loop_service::handle_connection(seastar::connected_socket socket,
                                                                seastar::socket_address remote_address)
 {
@@ -36,7 +36,7 @@ seastar::future<> server_event_loop_service::handle_connection(seastar::connecte
     return seastar::repeat([&channel] {
       return channel->input.read().then([&channel](auto buf) {
         if (buf) {
-          channel->pipeline()->fire_channel_read(rune::create_message(std::move(buf)));
+          channel->pipeline()->fire_channel_read(mithril::create_message(std::move(buf)));
           return seastar::make_ready_future<stop_iteration>(stop_iteration::no);
         } else {
           return seastar::make_ready_future<stop_iteration>(stop_iteration::yes);
