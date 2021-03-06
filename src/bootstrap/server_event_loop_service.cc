@@ -68,6 +68,8 @@ seastar::future<> server_event_loop_service::start()
     return seastar::make_exception_future(e);
   }
 
+  running = true;
+
   auto handle_accept = [this](seastar::accept_result res) {
     (void)handle_connection(std::move(res.connection), res.remote_address).handle_exception([](std::exception_ptr ep) {
       MITHRIL_LOG(warning) << "Could not handle connection: " << ep;
@@ -87,7 +89,6 @@ seastar::future<> server_event_loop_service::start()
     }
   });
 
-  running = true;
   return seastar::make_ready_future<>();
 }
 
