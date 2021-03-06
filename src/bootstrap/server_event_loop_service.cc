@@ -28,9 +28,8 @@ seastar::future<> server_event_loop_service::handle_connection(seastar::connecte
 
   return seastar::do_with(channel, [this](auto& channel) {
     channel->attach_pipeline(std::make_shared<channel_pipeline>());
-    const auto initializer_name = channel_pipeline::get_handler_name(bs.initializer);
-    channel->pipeline()->add_last(initializer_name, bs.initializer);
-    channel->pipeline()->remove(initializer_name);
+    channel->pipeline()->add_last("init", bs.initializer);
+    channel->pipeline()->remove("init");
     channel->pipeline()->fire_channel_active();
 
     return seastar::repeat([&channel] {
