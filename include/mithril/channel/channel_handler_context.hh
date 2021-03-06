@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-02-25.
 //
 
-#ifndef RUNE_INCLUDE_CHANNEL_HANDLER_CONTEXT_HH
-#define RUNE_INCLUDE_CHANNEL_HANDLER_CONTEXT_HH
+#ifndef MITHRIL_INCLUDE_CHANNEL_HANDLER_CONTEXT_HH
+#define MITHRIL_INCLUDE_CHANNEL_HANDLER_CONTEXT_HH
 
 #include "mithril/channel/channel_handler.hh"
 #include "mithril/channel/channel_inbound_invoker.hh"
@@ -170,4 +170,4 @@ private:
   }
 };
 
-#endif //RUNE_INCLUDE_CHANNEL_HANDLER_CONTEXT_HH
+#endif //MITHRIL_INCLUDE_CHANNEL_HANDLER_CONTEXT_HH

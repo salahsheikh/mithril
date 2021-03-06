@@ -49,21 +49,21 @@ seastar::future<> client_event_loop_service::handle_connection(seastar::connecte
       }
     });
   }).then(fire_disconnect).handle_exception([](auto e) {
-    RUNE_LOG(warning) << "Exception event in service on shard: " << seastar::this_shard_id();
-    RUNE_LOG(warning) << e;
+    MITHRIL_LOG(warning) << "Exception event in service on shard: " << seastar::this_shard_id();
+    MITHRIL_LOG(warning) << e;
   });
 }
 
 void client_event_loop_service::start()
 {
-  RUNE_LOG(info) << "Started client...";
+  MITHRIL_LOG(info) << "Started client...";
 
   seastar::socket_address local = seastar::socket_address(::sockaddr_in {AF_INET, INADDR_ANY, {0}});
   seastar::ipv4_addr endpoint;
   try {
     endpoint = seastar::ipv4_addr(bs.host, bs.port);
   } catch (std::exception& e) {
-    RUNE_LOG(fatal) << "Invalid host and port combination";
+    MITHRIL_LOG(fatal) << "Invalid host and port combination";
     seastar::engine_exit(std::make_exception_ptr(e));
     return;
   }
@@ -74,7 +74,7 @@ void client_event_loop_service::start()
     running = true;
     return handle_connection(std::move(connection));
   }).handle_exception([](std::exception_ptr ep) {
-    RUNE_LOG(info) << "Encountered exception: " << ep;
+    MITHRIL_LOG(info) << "Encountered exception: " << ep;
     seastar::engine_exit(ep);
   });
 }

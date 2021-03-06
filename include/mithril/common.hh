@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-02-26.
 //
 
-#ifndef RUNE_INCLUDE_UTIL_H
-#define RUNE_INCLUDE_UTIL_H
+#ifndef MITHRIL_INCLUDE_UTIL_H
+#define MITHRIL_INCLUDE_UTIL_H
 
 #ifndef CHECK
 #include <cstdlib>
@@ -33,11 +33,11 @@ enum levels
   fatal
 };
 static noop_log sink;
-#define RUNE_LOG(lvl) (sink)
+#define MITHRIL_LOG(lvl) (sink)
 #else
 #include <boost/log/trivial.hpp>
 
-#define RUNE_LOG(lvl) BOOST_LOG_TRIVIAL(lvl)
+#define MITHRIL_LOG(lvl) BOOST_LOG_TRIVIAL(lvl)
 #endif
 
-#endif //RUNE_INCLUDE_UTIL_H
+#endif //MITHRIL_INCLUDE_UTIL_H

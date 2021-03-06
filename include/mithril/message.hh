@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-03-01.
 //
 
-#ifndef RUNE_INCLUDE_RUNE_MESSAGE_HH
-#define RUNE_INCLUDE_RUNE_MESSAGE_HH
+#ifndef MITHRIL_INCLUDE_MITHRIL_MESSAGE_HH
+#define MITHRIL_INCLUDE_MITHRIL_MESSAGE_HH
 
 #include <utility>
 #include <typeinfo>
@@ -126,4 +126,4 @@ message create_message(ValueType&& val)
 
 }
 
-#endif //RUNE_INCLUDE_RUNE_MESSAGE_HH
+#endif //MITHRIL_INCLUDE_MITHRIL_MESSAGE_HH

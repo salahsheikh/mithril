@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-02-27.
 //
 
-#ifndef RUNE_INCLUDE_BOOTSTRAP_HH
-#define RUNE_INCLUDE_BOOTSTRAP_HH
+#ifndef MITHRIL_INCLUDE_BOOTSTRAP_HH
+#define MITHRIL_INCLUDE_BOOTSTRAP_HH
 
 #include <memory>
 #include <string>
@@ -64,4 +64,4 @@ public:
 
 }
 
-#endif //RUNE_INCLUDE_BOOTSTRAP_HH
+#endif //MITHRIL_INCLUDE_BOOTSTRAP_HH

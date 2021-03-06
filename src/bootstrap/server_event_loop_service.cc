@@ -55,7 +55,7 @@ seastar::future<> server_event_loop_service::handle_connection(seastar::connecte
 
 seastar::future<> server_event_loop_service::start()
 {
-  RUNE_LOG(trace) << "Starting service on shard: " << seastar::this_shard_id();
+  MITHRIL_LOG(trace) << "Starting service on shard: " << seastar::this_shard_id();
 
   seastar::listen_options lo;
   lo.reuse_address = true;
@@ -63,14 +63,14 @@ seastar::future<> server_event_loop_service::start()
   try {
     server_socket = seastar::listen(seastar::make_ipv4_address({bs.port}), lo);
   } catch (std::system_error& e) {
-    RUNE_LOG(fatal) << e.what();
+    MITHRIL_LOG(fatal) << e.what();
     seastar::engine_exit();
     return seastar::make_exception_future(e);
   }
 
   auto handle_accept = [this](seastar::accept_result res) {
     (void)handle_connection(std::move(res.connection), res.remote_address).handle_exception([](std::exception_ptr ep) {
-      RUNE_LOG(warning) << "Could not handle connection: " << ep;
+      MITHRIL_LOG(warning) << "Could not handle connection: " << ep;
     });
     return seastar::make_ready_future<stop_iteration>(!running ? stop_iteration::yes : stop_iteration::no);
   };
@@ -82,7 +82,7 @@ seastar::future<> server_event_loop_service::start()
     return server_socket.accept().then(handle_accept);
   }).handle_exception([this](std::exception_ptr ep) {
     if (running) {
-      RUNE_LOG(fatal) << "Exception event in service on shard: " << seastar::this_shard_id();
+      MITHRIL_LOG(fatal) << "Exception event in service on shard: " << seastar::this_shard_id();
       seastar::engine_exit(ep);
     }
   });
@@ -97,7 +97,7 @@ seastar::future<> server_event_loop_service::stop()
     running = false;
     server_socket.abort_accept();
     return task->finally([] {
-      RUNE_LOG(trace) << "Shut down service on shard: " << seastar::this_shard_id();
+      MITHRIL_LOG(trace) << "Shut down service on shard: " << seastar::this_shard_id();
       return seastar::make_ready_future();
     });
   }

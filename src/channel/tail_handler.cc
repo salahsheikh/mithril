@@ -19,7 +19,7 @@
 
 void tail_handler::channel_read(channel_handler_context&, mithril::message)
 {
-  RUNE_LOG(warning) << "Unhandled read...";
+  MITHRIL_LOG(warning) << "Unhandled read...";
 }
 
 void tail_handler::channel_inactive(channel_handler_context& ctx)

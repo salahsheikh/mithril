@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-02-25.
 //
 
-#ifndef RUNE_INCLUDE_SERVER_CHANNEL_H
-#define RUNE_INCLUDE_SERVER_CHANNEL_H
+#ifndef MITHRIL_INCLUDE_SERVER_CHANNEL_H
+#define MITHRIL_INCLUDE_SERVER_CHANNEL_H
 
 #include <mithril/common.hh>
 #include <mithril/channel/channel.hh>
@@ -61,4 +61,4 @@ public:
 
 };
 
-#endif //RUNE_INCLUDE_SERVER_CHANNEL_H
+#endif //MITHRIL_INCLUDE_SERVER_CHANNEL_H

@@ -7,14 +7,14 @@
 void socket_channel::write(mithril::message msg)
 {
   if (!msg->holds<byte_buffer>()) {
-    RUNE_LOG(warning) << "Unhandled write...";
+    MITHRIL_LOG(warning) << "Unhandled write...";
     return;
   }
 
   tx.emplace(output.write(std::move(msg)->unwrap<byte_buffer>()).then([this] {
     return output.flush();
   }).handle_exception([](std::exception_ptr e) {
-    RUNE_LOG(warning) << "Exceptional write!";
+    MITHRIL_LOG(warning) << "Exceptional write!";
   }));
 }
 

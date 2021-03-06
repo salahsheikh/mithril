@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-03-03.
 //
 
-#ifndef RUNE_INCLUDE_RUNE_HANDLER_BYTE_TO_MESSAGE_DECODER_HH
-#define RUNE_INCLUDE_RUNE_HANDLER_BYTE_TO_MESSAGE_DECODER_HH
+#ifndef MITHRIL_INCLUDE_MITHRIL_HANDLER_BYTE_TO_MESSAGE_DECODER_HH
+#define MITHRIL_INCLUDE_MITHRIL_HANDLER_BYTE_TO_MESSAGE_DECODER_HH
 
 #include <mithril/channel/channel_inbound_handler.hh>
 #include <mithril/message.hh>
@@ -41,4 +41,4 @@ public:
   void channel_read(channel_handler_context& ctx, mithril::message msg) override;
 };
 
-#endif //RUNE_INCLUDE_RUNE_HANDLER_BYTE_TO_MESSAGE_DECODER_HH
+#endif //MITHRIL_INCLUDE_MITHRIL_HANDLER_BYTE_TO_MESSAGE_DECODER_HH

@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-03-03.
 //
 
-#ifndef RUNE_INCLUDE_RUNE_HANDLER_STRING_DECODER_HH
-#define RUNE_INCLUDE_RUNE_HANDLER_STRING_DECODER_HH
+#ifndef MITHRIL_INCLUDE_MITHRIL_HANDLER_STRING_DECODER_HH
+#define MITHRIL_INCLUDE_MITHRIL_HANDLER_STRING_DECODER_HH
 
 #include <mithril/handler/message_to_message_decoder.hh>
 #include <mithril/buffer/byte_buffer.hh>
@@ -20,4 +20,4 @@ public:
   }
 };
 
-#endif //RUNE_INCLUDE_RUNE_HANDLER_STRING_DECODER_HH
+#endif //MITHRIL_INCLUDE_MITHRIL_HANDLER_STRING_DECODER_HH

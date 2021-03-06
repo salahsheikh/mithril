@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-02-27.
 //
 
-#ifndef RUNE_INCLUDE_SERVER_EVENT_LOOP_SERVICE_HH
-#define RUNE_INCLUDE_SERVER_EVENT_LOOP_SERVICE_HH
+#ifndef MITHRIL_INCLUDE_SERVER_EVENT_LOOP_SERVICE_HH
+#define MITHRIL_INCLUDE_SERVER_EVENT_LOOP_SERVICE_HH
 
 #include <mithril/channel/socket_channel.hh>
 #include <mithril/channel/channel_pipeline.hh>
@@ -45,4 +45,4 @@ public:
 
 }
 
-#endif //RUNE_INCLUDE_SERVER_EVENT_LOOP_SERVICE_HH
+#endif //MITHRIL_INCLUDE_SERVER_EVENT_LOOP_SERVICE_HH

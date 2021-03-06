@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-02-27.
 //
 
-#ifndef RUNE_INCLUDE_RUNE_CLIENT_EVENT_LOOP_SERVICE_HH
-#define RUNE_INCLUDE_RUNE_CLIENT_EVENT_LOOP_SERVICE_HH
+#ifndef MITHRIL_INCLUDE_MITHRIL_CLIENT_EVENT_LOOP_SERVICE_HH
+#define MITHRIL_INCLUDE_MITHRIL_CLIENT_EVENT_LOOP_SERVICE_HH
 
 #include <mithril/bootstrap/bootstrap.hh>
 #include <mithril/channel/socket_channel.hh>
@@ -38,4 +38,4 @@ public:
   seastar::future<> stop();
 };
 
-#endif //RUNE_INCLUDE_RUNE_CLIENT_EVENT_LOOP_SERVICE_HH
+#endif //MITHRIL_INCLUDE_MITHRIL_CLIENT_EVENT_LOOP_SERVICE_HH

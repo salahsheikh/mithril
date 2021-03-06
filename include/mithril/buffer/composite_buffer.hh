@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-03-03.
 //
 
-#ifndef RUNE_INCLUDE_RUNE_COMPOSITE_BUFFER_HH
-#define RUNE_INCLUDE_RUNE_COMPOSITE_BUFFER_HH
+#ifndef MITHRIL_INCLUDE_MITHRIL_COMPOSITE_BUFFER_HH
+#define MITHRIL_INCLUDE_MITHRIL_COMPOSITE_BUFFER_HH
 
 #include <mithril/common.hh>
 #include <mithril/buffer/byte_buffer.hh>
@@ -124,4 +124,4 @@ public:
   }
 };
 
-#endif //RUNE_INCLUDE_RUNE_COMPOSITE_BUFFER_HH
+#endif //MITHRIL_INCLUDE_MITHRIL_COMPOSITE_BUFFER_HH

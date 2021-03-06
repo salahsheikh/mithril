@@ -58,7 +58,7 @@ void bootstrap::start_server(int argc, char** argv)
 
     return server.start(*this).then([&] {
       return server.invoke_on_all(&server_event_loop_service::start).handle_exception([](auto) {
-        RUNE_LOG(fatal) << "Server startup failed";
+        MITHRIL_LOG(fatal) << "Server startup failed";
       });
     });
   });

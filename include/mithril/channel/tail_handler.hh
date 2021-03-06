@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-02-27.
 //
 
-#ifndef RUNE_INCLUDE_TAIL_HANDLER_HH
-#define RUNE_INCLUDE_TAIL_HANDLER_HH
+#ifndef MITHRIL_INCLUDE_TAIL_HANDLER_HH
+#define MITHRIL_INCLUDE_TAIL_HANDLER_HH
 
 #include <mithril/channel/channel_handler.hh>
 #include <mithril/channel/channel_inbound_handler.hh>
@@ -26,4 +26,4 @@ public:
   void channel_read(channel_handler_context&, mithril::message) final;
 };
 
-#endif //RUNE_INCLUDE_TAIL_HANDLER_HH
+#endif //MITHRIL_INCLUDE_TAIL_HANDLER_HH

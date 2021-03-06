@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-02-25.
 //
 
-#ifndef RUNE_INCLUDE_CHANNEL_PIPELINE_HH
-#define RUNE_INCLUDE_CHANNEL_PIPELINE_HH
+#ifndef MITHRIL_INCLUDE_CHANNEL_PIPELINE_HH
+#define MITHRIL_INCLUDE_CHANNEL_PIPELINE_HH
 
 #include "mithril/channel/channel_handler_context.hh"
 #include "mithril/channel/channel_handler.hh"
@@ -93,4 +93,4 @@ public:
   friend channel;
 };
 
-#endif //RUNE_INCLUDE_CHANNEL_PIPELINE_HH
+#endif //MITHRIL_INCLUDE_CHANNEL_PIPELINE_HH

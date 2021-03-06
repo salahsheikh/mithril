@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-02-25.
 //
 
-#ifndef RUNE_INCLUDE_CHANNEL_INBOUND_INVOKER_HH
-#define RUNE_INCLUDE_CHANNEL_INBOUND_INVOKER_HH
+#ifndef MITHRIL_INCLUDE_CHANNEL_INBOUND_INVOKER_HH
+#define MITHRIL_INCLUDE_CHANNEL_INBOUND_INVOKER_HH
 
 #include <mithril/message.hh>
 
@@ -17,4 +17,4 @@ public:
   virtual void fire_channel_read(mithril::message) = 0;
 };
 
-#endif //RUNE_INCLUDE_CHANNEL_INBOUND_INVOKER_HH
+#endif //MITHRIL_INCLUDE_CHANNEL_INBOUND_INVOKER_HH

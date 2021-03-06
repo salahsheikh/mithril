@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-03-04.
 //
 
-#ifndef RUNE_EXAMPLES_ECHO_ECHO_CLIENT_HANDLER_HH
-#define RUNE_EXAMPLES_ECHO_ECHO_CLIENT_HANDLER_HH
+#ifndef MITHRIL_EXAMPLES_ECHO_ECHO_CLIENT_HANDLER_HH
+#define MITHRIL_EXAMPLES_ECHO_ECHO_CLIENT_HANDLER_HH
 
 #include <mithril/channel/channel_inbound_handler.hh>
 #include <mithril/channel/channel_handler_context.hh>
@@ -40,4 +40,4 @@ public:
   }
 };
 
-#endif //RUNE_EXAMPLES_ECHO_ECHO_CLIENT_HANDLER_HH
+#endif //MITHRIL_EXAMPLES_ECHO_ECHO_CLIENT_HANDLER_HH

@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-02-25.
 //
 
-#ifndef RUNE_INCLUDE_CHANNEL_OUTBOUND_HANDLER_HH
-#define RUNE_INCLUDE_CHANNEL_OUTBOUND_HANDLER_HH
+#ifndef MITHRIL_INCLUDE_CHANNEL_OUTBOUND_HANDLER_HH
+#define MITHRIL_INCLUDE_CHANNEL_OUTBOUND_HANDLER_HH
 
 #include <mithril/channel/channel_handler.hh>
 #include <mithril/message.hh>
@@ -29,4 +29,4 @@ public:
   }
 };
 
-#endif //RUNE_INCLUDE_CHANNEL_OUTBOUND_HANDLER_HH
+#endif //MITHRIL_INCLUDE_CHANNEL_OUTBOUND_HANDLER_HH

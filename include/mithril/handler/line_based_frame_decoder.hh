@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-03-03.
 //
 
-#ifndef RUNE_INCLUDE_RUNE_HANDLER_LINE_BASED_FRAME_DECODER_HH
-#define RUNE_INCLUDE_RUNE_HANDLER_LINE_BASED_FRAME_DECODER_HH
+#ifndef MITHRIL_INCLUDE_MITHRIL_HANDLER_LINE_BASED_FRAME_DECODER_HH
+#define MITHRIL_INCLUDE_MITHRIL_HANDLER_LINE_BASED_FRAME_DECODER_HH
 
 #include <mithril/channel/channel_inbound_handler.hh>
 #include <mithril/handler/byte_to_message_decoder.hh>
@@ -23,4 +23,4 @@ public:
   void decode(channel_handler_context&, composite_buffer& msg, std::list<mithril::message>& out) override;
 };
 
-#endif //RUNE_INCLUDE_RUNE_HANDLER_LINE_BASED_FRAME_DECODER_HH
+#endif //MITHRIL_INCLUDE_MITHRIL_HANDLER_LINE_BASED_FRAME_DECODER_HH

@@ -2,8 +2,8 @@
 // Created by ssheikh on 2021-02-26.
 //
 
-#ifndef RUNE_TESTS_TEST_CHANNEL_H
-#define RUNE_TESTS_TEST_CHANNEL_H
+#ifndef MITHRIL_TESTS_TEST_CHANNEL_H
+#define MITHRIL_TESTS_TEST_CHANNEL_H
 
 #include <mithril/channel/channel.hh>
 
@@ -25,4 +25,4 @@ public:
   }
 };
 
-#endif //RUNE_TESTS_TEST_CHANNEL_H
+#endif //MITHRIL_TESTS_TEST_CHANNEL_H
