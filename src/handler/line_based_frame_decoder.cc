@@ -13,7 +13,7 @@ void line_based_frame_decoder::decode(channel_handler_context&, composite_buffer
   if (msg.readable_bytes()) {
     std::basic_string<char> line;
     for (auto it = msg.ro_begin(); it != msg.ro_end(); ++it) {
-      if (*it == '\n') [[unlikely]] {
+      if (*it == '\n' && !line.empty()) [[unlikely]] {
         out.emplace_back(mithril::create_message(byte_buffer::copy_of(line)));
         line = {};
       } else {
