@@ -7,7 +7,6 @@
 
 #include <mithril/common.hh>
 #include <mithril/channel/channel.hh>
-#include <mithril/bootstrap/server_event_loop_service.hh>
 #include <mithril/message.hh>
 #include <mithril/buffer/byte_buffer.hh>
 

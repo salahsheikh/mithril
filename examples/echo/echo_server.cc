@@ -1,6 +1,5 @@
-#include <mithril/bootstrap/bootstrap.hh>
 #include <mithril/channel/channel_initializer.hh>
-#include <mithril/channel/channel_pipeline.hh>
+#include <mithril/bootstrap/bootstrap.hh>
 
 #include <iostream>
 #include <exception>
@@ -26,7 +25,8 @@ int main(int argc, char** argv)
 
   try {
     bootstrap bs;
-    bs.handler<echo_channel_initializer>().bind(PORT).start_server(argc, argv);
+    bs.bind(PORT)
+      .start_server<echo_channel_initializer>(argc, argv);
   } catch (std::exception& e) {
     std::cerr << e.what();
   }
