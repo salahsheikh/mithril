@@ -90,17 +90,19 @@ public:
     running = true;
 
     auto handle_accept = [this](seastar::accept_result res) {
-      (void)handle_connection(std::move(res.connection), res.remote_address).handle_exception([](std::exception_ptr ep) {
+      return handle_connection(std::move(res.connection), res.remote_address)
+      .handle_exception([](std::exception_ptr ep) {
         MITHRIL_LOG(warning) << "Could not handle connection: " << ep;
       });
-      return seastar::make_ready_future<stop_iteration>(!running ? stop_iteration::yes : stop_iteration::no);
     };
 
     task = seastar::repeat([this, &handle_accept]() {
       if (!running) {
         return seastar::make_ready_future<stop_iteration>(stop_iteration::yes);
       }
-      return server_socket.accept().then(handle_accept);
+      return server_socket.accept().then(handle_accept).then([this] {
+        return seastar::make_ready_future<stop_iteration>(!running ? stop_iteration::yes : stop_iteration::no);;
+      });
     }).handle_exception([this](std::exception_ptr ep) {
       if (running) {
         MITHRIL_LOG(fatal) << "Exception event in service on shard: " << seastar::this_shard_id();
